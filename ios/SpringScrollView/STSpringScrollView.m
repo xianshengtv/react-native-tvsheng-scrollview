@@ -12,7 +12,7 @@
 @interface STSpringScrollView ()
 @property(nonatomic, assign) float refreshHeaderHeight;
 @property(nonatomic, assign) float loadingFooterHeight;
-//@property(nonatomic, assign) UIEdgeInsets orgInsets;
+@property(nonatomic, assign) UIEdgeInsets orgInsets;
 @property(nonatomic, copy) NSString *refreshStatus;
 @property(nonatomic, copy) NSString *loadingStatus;
 @property(nonatomic, copy) NSDictionary *initialContentOffset;
