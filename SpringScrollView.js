@@ -21,10 +21,9 @@ import {
   ViewStyle,
   ScrollView,
 } from "react-native";
-import * as TextInputState from "react-native/lib/TextInputState";
 import { FooterStatus } from "./LoadingFooter";
-import { NormalHeader } from "./NormalHeader";
-import { NormalFooter } from "./NormalFooter";
+import { ChineseNormalHeader } from "./Customize/ChineseNormalHeader";
+import { ChineseNormalFooter } from "./Customize/ChineseNormalFooter";
 import type { HeaderStatus } from "./RefreshHeader";
 import { idx } from "./idx";
 import type { Offset, SpringScrollViewPropType } from "./Types";
@@ -547,8 +546,6 @@ export class SpringScrollView extends React.PureComponent<SpringScrollViewPropTy
   };
 
   _onTouchBegin = () => {
-    if (TextInputState.currentlyFocusedField())
-      TextInputState.blurTextInput(TextInputState.currentlyFocusedField());
     this.props.tapToHideKeyboard && Keyboard.dismiss();
     this.props.onTouchBegin && this.props.onTouchBegin();
   };
@@ -561,8 +558,8 @@ export class SpringScrollView extends React.PureComponent<SpringScrollViewPropTy
   static defaultProps = {
     bounces: true,
     scrollEnabled: true,
-    refreshHeader: NormalHeader,
-    loadingFooter: NormalFooter,
+    refreshHeader: ChineseNormalHeader,
+    loadingFooter: ChineseNormalFooter,
     textInputRefs: [],
     inputToolBarHeight: 44,
     tapToHideKeyboard: true,
